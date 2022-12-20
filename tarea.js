@@ -4,7 +4,7 @@
 /*  Funcion que verifica que ninguno de los terminos sea igual a 0
     Recibe termino_1: numero, termino_2: numero
     Retorna Booleano: true, para "Ninguo de los terminos es igual a 0"
-                      false, para "Uno o dos de los terminos es igual a 0"
+                    false, para "Uno o dos de los terminos es igual a 0"
 */
 function verificar(termino_1=1, termino_2= 1){
     let producto = termino_1 * termino_2
@@ -23,6 +23,7 @@ function verificar(termino_1=1, termino_2= 1){
             flag: booleano
     Retorna, String 
 */
+
 function imprimir(resultado, termino_1, termino_2, operacion, flag){
     if(flag){
         console.log(`[+] El resultado de la operacion ${operacion} entre ${termino_1} y ${termino_2} es: ${resultado}`)
@@ -37,7 +38,7 @@ function imprimir(resultado, termino_1, termino_2, operacion, flag){
             cotaSuperior: numero
             numero: numero
     Retorna, Booleano: true, para "Esta en el intervalo"
-                       false, para "No esta en el intervalo"
+            false, para "No esta en el intervalo"
 */
 
 function verificarIntervalo(porcentaje, cotaInferior, cotaSuperior){
@@ -47,6 +48,7 @@ function verificarIntervalo(porcentaje, cotaInferior, cotaSuperior){
         return false
     }
 }
+
 //a) la función debe retornar la suma de los dos operandos 
 
 let suma = function oPsuma(sumando_1, sumando_2){
@@ -58,7 +60,9 @@ let suma = function oPsuma(sumando_1, sumando_2){
 }
 
 suma(1, 3)
+
 //b) la función debe retornar la resta de los dos opernados
+
 let resta = function oPresta(minuendo, sustraendo){
     if(verificar(minuendo, sustraendo)){
         imprimir(minuendo - sustraendo, minuendo, sustraendo, 'Resta', true)    
@@ -71,6 +75,7 @@ let resta = function oPresta(minuendo, sustraendo){
 resta(1, 3)
 
 //c) la función debe retornar la multiplicación de los dos operandos
+
 let multiplicación = function oPmultiplicacion(factor_1, factor_2, modo=true){
     if(modo){
 		if(verificar(factor_1, factor_2)){
@@ -86,6 +91,7 @@ let multiplicación = function oPmultiplicacion(factor_1, factor_2, modo=true){
 multiplicación(3, 1)
 
 //d) la función debe retornar la división de los dos operandos
+
 let division = function oPdivision(dividendo, divisor, modo=true){
     if(modo){
 		if(verificar(dividendo, divisor)){
@@ -110,6 +116,7 @@ division(2, 0)
 // Edad: 28,
 // Dirección: Calle falsa 123,
 // Teléfono: 11221122.
+
 let cliente = function persona(nombre, apellido, edad, direccion, telefono='000 000 000'){
     return  `Los datos del cliente son:\n
             Nombre: ${nombre},\n
@@ -126,6 +133,7 @@ console.log(cliente('John', 'Doe', 'XX', 'XXXXXXX XX XX',))
 // Si el porcentaje enviado es menor a 0 o mayor a 100, entonces retornar un mensaje con la siguiente frase: `El número ${porcentaje} es un porcentaje inválido`
 // Si el número al cual se le aplicará el porcentaje es 0, entonces retornar un mensaje con la siguiente frase: `Cualquier porcentaje aplicado sobre cero, siempre será cero`.
 // Al llamar a la función, pase los 2 argumentos numéricos y visualice en consola el valor retornado.
+
 let resultado = function porcentaje(cantidad=0, porcentaje=0){
     const cotaInferior = 0
     const cotaSuperior = 100
@@ -136,9 +144,9 @@ let resultado = function porcentaje(cantidad=0, porcentaje=0){
         console.log(`El número ${porcentaje} es un porcentaje inválido`)
     }
     else{
-		 let producto = multiplicación(cantidad, porcentaje, false)
-		 let cociente = division(producto, 100, false) 
-		 console.log(`El porcentaje ${porcentaje} del número ${cantidad} es: ${cociente}`)
+		let producto = multiplicación(cantidad, porcentaje, false)
+		let cociente = division(producto, 100, false) 
+		console.log(`El porcentaje ${porcentaje} del número ${cantidad} es: ${cociente}`)
 		}
     
 }
@@ -217,6 +225,7 @@ const conversion = function convertirDiasASegundos(dias){
 console.log(conversion(1))
 console.log(conversion(2))
 console.log(conversion(3))
+
 // 5) Crea una función que reciba como parámetro: kilometros.
 // Con esta información, el algoritmo deberá retornar el resultado de la conversión de kilómetros a millas mediante el siguiente mensaje: El resultado de la conversión de ${kilometros} kilometros a millas es: ${resultado}
 // Llamar a la función 3 veces con diferentes datos pasados como argumentos.
@@ -230,6 +239,7 @@ const distancia = function deKilometrosAMillas(kilometros){
 console.log(distancia(1))
 console.log(distancia(2))
 console.log(distancia(3))
+
 // 6) Crea una función que reciba los siguientes parámetros: base y altura.
 // Con esta información, el algoritmo deberá retornar el resultado del área del triángulo mediante el siguiente mensaje: El resultado del área del triángulo con base ${base} y altura ${altura} es: ${resultado}
 // Llamar a la función 3 veces con diferentes datos pasados como argumentos.
@@ -243,10 +253,12 @@ const area = function areaTriangulo(base, altura){
 console.log(area(2, 2))
 console.log(area(2, 3))
 console.log(area(2, 4))
+
 // 7) Crea una función que reciba los siguientes parámetros: base y altura.
 // Con esta información, el algoritmo deberá retornar el resultado del perímetro del rectángulo mediante el siguiente mensaje: El resultado del perímetro del rectángulo con base ${base} y altura ${altura} es: ${resultado}
 // Llamar a la función 3 veces con diferentes datos pasados como argumentos.
 // Verificar en consola que los datos retornados coincidan con lo requerido por la consigna.
+
 const perimetro = function perimetroRectangulo(base, altura){
     let resultado = multiplicación(2, base+altura, false)
     return `El resultado del perímetro del rectángulo con base ${base} y altura ${altura} es: ${resultado}`
